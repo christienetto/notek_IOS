@@ -231,7 +231,7 @@ enum PeerMessage {
 
 // MARK: - Collaborative Client
 
-class CollaborativeClient: ObservableObject {
+class CollaborativeClient: NSObject, ObservableObject {
     @Published var document = CollaborativeDocument()
     @Published var isConnected = false
     @Published var connectionStatus = "Disconnected"
