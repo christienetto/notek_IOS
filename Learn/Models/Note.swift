@@ -12,4 +12,6 @@ struct Note: Identifiable, Hashable {
     var title: String
     var content: String
     var date: Date = Date()
+    var isCollaborative: Bool = false
+    var collaborativeId: String? = nil
 }

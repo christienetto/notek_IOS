@@ -44,9 +44,34 @@ struct InitialView: View {
                         }
                     }
 
-                    // Add Note Button
-                    MyButton(title: "Add Note", systemImage: "plus") {
-                        showingAddNote = true
+                    // Action Buttons
+                    VStack(spacing: 12) {
+                        // Collaborative Editor Button
+                        NavigationLink(destination: CollaborativeNoteView()) {
+                            HStack(spacing: 8) {
+                                Image(systemName: "wifi")
+                                    .font(.headline.monospaced())
+                                    .foregroundColor(Color.green)
+                                Text("Collaborative Editor")
+                                    .font(.body.monospaced())
+                                    .foregroundColor(Color.green)
+                            }
+                            .padding(12)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.black.opacity(0.8))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .stroke(Color.green, lineWidth: 1)
+                            )
+                            .cornerRadius(4)
+                            .shadow(color: Color.green.opacity(0.2), radius: 3, x: 0, y: 2)
+                        }
+                        .buttonStyle(.plain)
+                        
+                        // Add Note Button
+                        MyButton(title: "Add Note", systemImage: "plus") {
+                            showingAddNote = true
+                        }
                     }
                     .padding(.horizontal)
                     .padding(.bottom, 20)
